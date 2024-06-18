@@ -11,6 +11,8 @@ public class Utils {
             return DataFormat.JSON;
         } else if (resource.startsWith("<")) {
             return DataFormat.XML;
+        }else if(resource.startsWith("MSH")){
+            return DataFormat.HL7_PIPE_ENCODING;
         }
         throw new FileTypeNotFound();
     }
