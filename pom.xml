@@ -114,6 +114,12 @@
 			<artifactId>hapi-structures-v25</artifactId>
 			<version>${hapi_hl7v2_version}</version>
 		</dependency>
+		<!-- Para hapi-fhir-caching-caffeine -->
+		<dependency>
+			<groupId>ca.uhn.hapi.fhir</groupId>
+			<artifactId>hapi-fhir-caching-caffeine</artifactId>
+			<version>${hapifhir_version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>
