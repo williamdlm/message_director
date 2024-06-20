@@ -13,13 +13,13 @@ import com.github.williamdlm.message_director.pojo.Utils;
 public class ParserHL7v2 {
 
     public static Message toParser(String resource) throws HL7Exception {
-//        HapiContext context = new DefaultHapiContext();
-//        CanonicalModelClassFactory mcf = new CanonicalModelClassFactory("2.5");
-//        context.setModelClassFactory(mcf);
+        HapiContext context = new DefaultHapiContext();
+        CanonicalModelClassFactory mcf = new CanonicalModelClassFactory("2.5");
+        context.setModelClassFactory(mcf);
 
         Message message = null;
         if (Utils.findType(resource).equals(DataFormat.HL7_PIPE_ENCODING)) {
-            PipeParser pipeParser = new PipeParser();
+            PipeParser pipeParser = context.getPipeParser();
             message = pipeParser.parse(resource);
             return message;
         }
