@@ -25,7 +25,6 @@ public class TestController {
     private final FhirStu3Parser fhirStu3Parser;
     private final FhirR4BParser fhirR4BParser;
     private final FhirR5Parser fhirR5Parser;
-
     private final FhirStu3InstanceValidation fhirStu3InstanceValidation;
     private final FhirR4InstanceValidation fhirR4InstanceValidation;
     private final FhirR4BInstanceValidation fhirR4BInstanceValidation;
@@ -40,7 +39,6 @@ public class TestController {
     String isValidSTU3(@RequestBody String message) {
         try {
             IBaseResource iBaseResource = fhirStu3Parser.toParser(message);
-            //validation
             ValidationResult validationResult = fhirStu3InstanceValidation.validationResult(iBaseResource);
             return validationResult.toString();
         } catch (DataFormatException e) {
@@ -51,9 +49,7 @@ public class TestController {
     @PostMapping("/validateR4")
     String isValidR4(@RequestBody String message) {
         try {
-            //parser
             IBaseResource iBaseResource = fhirR4Parser.toParser(message);
-            //validation
             ValidationResult validationResult = fhirR4InstanceValidation.validationResult(iBaseResource);
             return validationResult.toString();
 
@@ -67,7 +63,6 @@ public class TestController {
     String isValidR4B(@RequestBody String message) {
         try {
             IBaseResource iBaseResource = fhirR4BParser.toParser(message);
-            //validation
             ValidationResult validationResult = fhirR4BInstanceValidation.validationResult(iBaseResource);
             return validationResult.toString();
         } catch (DataFormatException e) {
@@ -80,7 +75,6 @@ public class TestController {
     String isValidR5(@RequestBody String message) {
         try {
             IBaseResource iBaseResource = fhirR5Parser.toParser(message);
-            //validation
             ValidationResult validationResult = fhirR5InstanceValidation.validationResult(iBaseResource);
             return validationResult.toString();
         } catch (DataFormatException e) {

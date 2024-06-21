@@ -4,7 +4,7 @@ import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.Message;
 import ca.uhn.hl7v2.util.Terser;
 import com.github.williamdlm.message_director.enums.DataFormat;
-import com.github.williamdlm.message_director.exception.FileTypeNotFound;
+import com.github.williamdlm.message_director.exception.FileTypeNotFoundException;
 
 public class HL7Util {
 
@@ -17,7 +17,7 @@ public class HL7Util {
         }else if(resource.startsWith("MSH")){
             return DataFormat.HL7_PIPE_ENCODING;
         }
-        throw new FileTypeNotFound();
+        throw new FileTypeNotFoundException();
     }
 
 
