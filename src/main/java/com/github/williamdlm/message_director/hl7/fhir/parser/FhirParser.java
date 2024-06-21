@@ -1,4 +1,4 @@
-package com.github.williamdlm.message_director.pojo.parser;
+package com.github.williamdlm.message_director.hl7.fhir.parser;
 
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.parser.IParser;

@@ -1,4 +1,4 @@
-package com.github.williamdlm.message_director.pojo;
+package com.github.williamdlm.message_director.hl7.common;
 
 import ca.uhn.fhir.context.FhirContext;
 

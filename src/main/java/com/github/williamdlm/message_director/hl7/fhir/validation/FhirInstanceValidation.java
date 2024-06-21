@@ -1,4 +1,4 @@
-package com.github.williamdlm.message_director.pojo.validation;
+package com.github.williamdlm.message_director.hl7.fhir.validation;
 
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.context.support.DefaultProfileValidationSupport;
@@ -18,13 +18,14 @@ public abstract class FhirInstanceValidation {
         this.context = context;
     }
 
-    ValidationResult validationResult(IBaseResource resource) {
+    public ValidationResult validationResult(IBaseResource resource) {
         ValidationSupportChain validationSupportChain = new ValidationSupportChain(
                 new DefaultProfileValidationSupport(context),
                 new InMemoryTerminologyServerValidationSupport(context),
                 new CommonCodeSystemsTerminologyService(context));
         FhirValidator validator = context.newValidator();
         FhirInstanceValidator instanceValidator = new FhirInstanceValidator(validationSupportChain);
+        instanceValidator.setAnyExtensionsAllowed(true);
         validator.registerValidatorModule(instanceValidator);
         ValidationResult result = validator.validateWithResult(resource);
         return result;

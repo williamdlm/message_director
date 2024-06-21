@@ -1,4 +1,4 @@
-package com.github.williamdlm.message_director.pojo.hl7v2;
+package com.github.williamdlm.message_director.hl7.hl7v2;
 
 import ca.uhn.hl7v2.DefaultHapiContext;
 import ca.uhn.hl7v2.HL7Exception;

@@ -1,6 +1,6 @@
-package com.github.williamdlm.message_director.pojo.parser;
+package com.github.williamdlm.message_director.hl7.fhir.parser;
 
-import com.github.williamdlm.message_director.pojo.FhirContextProvider;
+import com.github.williamdlm.message_director.hl7.common.FhirContextProvider;
 import org.springframework.stereotype.Component;
 
 @Component
