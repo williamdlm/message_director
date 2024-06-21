@@ -9,7 +9,7 @@ import ca.uhn.hl7v2.parser.PipeParser;
 import com.github.williamdlm.message_director.enums.DataFormat;
 import com.github.williamdlm.message_director.exception.FileTypeNotFound;
 import com.github.williamdlm.message_director.exception.InvalidHL7Version;
-import com.github.williamdlm.message_director.pojo.Utils;
+import com.github.williamdlm.message_director.util.HL7Util;
 
 public class ParserHL7v2 {
 
@@ -20,10 +20,10 @@ public class ParserHL7v2 {
 
 
         Message message = null;
-        if (Utils.findType(resource).equals(DataFormat.HL7_PIPE_ENCODING)) {
+        if (HL7Util.findType(resource).equals(DataFormat.HL7_PIPE_ENCODING)) {
             PipeParser pipeParser = context.getPipeParser();
             message = pipeParser.parse(resource);
-            if (!Utils.isHl7v25(message)) {
+            if (!HL7Util.isHl7v25(message)) {
                 throw new InvalidHL7Version();
             }
             return message;

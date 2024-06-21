@@ -1,4 +1,4 @@
-package com.github.williamdlm.message_director.pojo;
+package com.github.williamdlm.message_director.util;
 
 import ca.uhn.hl7v2.HL7Exception;
 import ca.uhn.hl7v2.model.Message;
@@ -6,7 +6,7 @@ import ca.uhn.hl7v2.util.Terser;
 import com.github.williamdlm.message_director.enums.DataFormat;
 import com.github.williamdlm.message_director.exception.FileTypeNotFound;
 
-public class Utils {
+public class HL7Util {
 
     public static DataFormat findType(String resource) {
         resource = resource.trim();
