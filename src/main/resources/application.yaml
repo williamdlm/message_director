@@ -3,6 +3,11 @@ server:
 spring:
   application:
     name: message_director
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
   datasource:
     url: jdbc:h2:mem:mydb
     username: sa
@@ -14,3 +19,7 @@ spring:
     console:
       enabled: true
       path: /h2-console
+mq:
+  queues:
+    http-inbound: http-inbound
+    http-outbound: http-outbound
