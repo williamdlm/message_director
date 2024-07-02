@@ -14,6 +14,8 @@
 	<name>message_director</name>
 	<description>Application that will handle complex message rules</description>
 	<properties>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
 		<java.version>17</java.version>
 		<hapifhir_version>7.0.2</hapifhir_version>
 		<hapi_hl7v2_version>2.5.1</hapi_hl7v2_version>
